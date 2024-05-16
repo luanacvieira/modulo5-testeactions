@@ -26,6 +26,8 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
+      - name: JS Filename
+        run: find dist/assets/*.js -type f -execdir echo '{}' ';''
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
